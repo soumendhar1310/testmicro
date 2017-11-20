@@ -1,0 +1,14 @@
+---
+applications:
+- instances: 1
+  timeout: 180
+  name: testmicro
+  buildpack: liberty-for-java
+  path: ./target/testmicro-1.0-SNAPSHOT.zip
+  memory: 512M
+  domain: au-syd.mybluemix.net
+  host: firstMicro
+  services:
+    - testmicro-cloudantno-1510125573626
+  env:
+    services_autoconfig_excludes : cloudantNoSQLDB=config
